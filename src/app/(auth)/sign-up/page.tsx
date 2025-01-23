@@ -24,10 +24,10 @@ import { authClient } from "@/lib/auth-client"; //import the auth client
 import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
-  username: z.string(),
-  email: z.string(),
-  password: z.string(),
-  confirm_password: z.string(),
+  email: z.string().email("Invalid email address"),
+  password: z.string().min(8, "Password must be at least 8 characters"),
+  username: z.string().min(1, "Username is required"),
+  confirm_password: z.string().min(8, "Password must be at least 8 characters"),
 });
 
 export default function SignUp() {

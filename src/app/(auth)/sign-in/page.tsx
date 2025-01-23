@@ -25,8 +25,8 @@ import { useRouter } from "next/navigation";
 import { MoonLoader } from "react-spinners";
 
 const formSchema = z.object({
-  email: z.string(),
-  password: z.string(),
+  email: z.string().email("Invalid email address"),
+  password: z.string().min(6, "Password must be at least 8 characters"),
 });
 
 export default function SignIn() {
@@ -60,7 +60,8 @@ export default function SignIn() {
               title: "Success",
               description: "Login successfull",
             });
-            router.push("/home/feed");
+            router.push("/dashboard");
+            router.refresh();
           },
           onError: (ctx) => {
             setLoading(false);
