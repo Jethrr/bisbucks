@@ -6,6 +6,7 @@ export const ContainerScroll = ({
   children,
 }: {
   titleComponent: string | React.ReactNode;
+  gi;
   children: React.ReactNode;
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);

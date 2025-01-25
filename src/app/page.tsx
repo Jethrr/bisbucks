@@ -60,18 +60,6 @@ export default function Home() {
             </button>
           </div>
         </div>
-        <div className="container-scroll">
-          <ContainerScroll titleComponent={<></>}>
-            <Image
-              src={`/linear.webp`}
-              alt="hero"
-              height={720}
-              width={1400}
-              className="mx-auto rounded-2xl object-cover h-full object-left-top"
-              draggable={false}
-            />
-          </ContainerScroll>
-        </div>
       </section>
     </div>
   );
